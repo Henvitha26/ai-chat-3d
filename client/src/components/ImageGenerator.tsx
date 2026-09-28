@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Image as ImageIcon, Download } from "lucide-react";
+import { Image as ImageIcon } from "lucide-react";
 
 interface ImageGeneratorProps {
   onGenerated: (url: string, prompt: string) => void;

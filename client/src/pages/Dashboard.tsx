@@ -9,8 +9,6 @@ import {
   TrendingUp,
 } from "lucide-react";
 import {
-  LineChart,
-  Line,
   BarChart,
   Bar,
   PieChart,
