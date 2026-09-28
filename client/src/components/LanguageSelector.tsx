@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default function LanguageSelector({ value, onChange }: Props) {
-  const current = LANGUAGES.find((l) => l.code === value) || LANGUAGES[0];
+  
 
   return (
     <div className="relative inline-block">
