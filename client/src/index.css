@@ -6,7 +6,6 @@
 /* THEME VARIABLES                                                */
 /* ============================================================= */
 :root {
-  /* Dark (default) */
   --bg-gradient-1: #1e1b4b;
   --bg-gradient-2: #0f172a;
   --bg-gradient-3: #020617;
@@ -35,25 +34,16 @@ html.light {
 }
 
 /* ============================================================= */
-/* GLOBAL                                                         */
+/* GLOBAL — allow page scroll                                     */
 /* ============================================================= */
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
+  padding: 0;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: var(--text-primary);
-}
-
-/* Prevent horizontal scroll globally */
-body {
-  overflow-x: hidden;
-}
-
-/* Vertical scroll only where needed */
-#root {
-  overflow-y: auto;
 }
 
 body {
@@ -63,7 +53,14 @@ body {
     var(--bg-gradient-2) 40%,
     var(--bg-gradient-3) 100%
   );
+  background-attachment: fixed;
+  overflow-x: hidden;
   transition: background 0.5s ease;
+}
+
+/* Prevent horizontal drift everywhere */
+* {
+  box-sizing: border-box;
 }
 
 /* ============================================================= */
@@ -166,7 +163,7 @@ body {
 }
 
 /* ============================================================= */
-/* MARKDOWN ADJUSTMENTS (theme-aware)                             */
+/* MARKDOWN                                                       */
 /* ============================================================= */
 .prose {
   color: var(--text-primary);
@@ -175,4 +172,12 @@ body {
 html.light .prose code {
   background: rgba(139, 92, 246, 0.1);
   color: #6d28d9;
+}
+
+/* ============================================================= */
+/* CHAT PAGE FIX — dynamic viewport height (mobile-safe)          */
+/* ============================================================= */
+.chat-viewport {
+  height: 100vh;      /* fallback for old browsers */
+  height: 100dvh;     /* dynamic viewport — excludes browser UI on mobile */
 }

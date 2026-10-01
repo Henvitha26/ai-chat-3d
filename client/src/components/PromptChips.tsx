@@ -15,7 +15,7 @@ interface Props {
 
 export default function PromptChips({ onSelect }: Props) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto mt-8">
+    <div className="grid grid-cols-2 gap-2 sm:gap-3 max-w-2xl mx-auto mt-4 sm:mt-8 px-2">
       {SUGGESTIONS.map((s, i) => (
         <motion.button
           key={s.text}
@@ -25,10 +25,10 @@ export default function PromptChips({ onSelect }: Props) {
           whileHover={{ scale: 1.03, y: -2 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => onSelect(s.text)}
-          className="glass rounded-xl p-3 text-left text-sm text-gray-200 hover:bg-white/10 transition flex items-center gap-3 border border-white/10"
+          className="glass rounded-xl p-2 sm:p-3 text-left text-xs sm:text-sm text-gray-200 hover:bg-white/10 transition flex items-center gap-2 border border-white/10"
         >
-          <span className="text-2xl flex-shrink-0">{s.icon}</span>
-          <span className="truncate">{s.text}</span>
+          <span className="text-lg sm:text-2xl flex-shrink-0">{s.icon}</span>
+          <span className="truncate leading-tight">{s.text}</span>
         </motion.button>
       ))}
     </div>

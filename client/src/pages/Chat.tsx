@@ -377,7 +377,7 @@ export default function Chat() {
   // Render
   // ---------------------------------------------------------------
   return (
-    <div className="relative w-full h-screen overflow-hidden flex">
+    <div className="relative w-full chat-viewport overflow-hidden flex">
       <ParticleField />
       <CursorGlow />
       <div className="absolute inset-0 opacity-25 pointer-events-none">
