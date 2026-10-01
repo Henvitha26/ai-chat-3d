@@ -44,8 +44,16 @@ body,
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: var(--text-primary);
-  overflow: hidden;
-  transition: color 0.3s ease;
+}
+
+/* Prevent horizontal scroll globally */
+body {
+  overflow-x: hidden;
+}
+
+/* Vertical scroll only where needed */
+#root {
+  overflow-y: auto;
 }
 
 body {
